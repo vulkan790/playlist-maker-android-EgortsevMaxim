@@ -1,5 +1,6 @@
 package com.example.playlist_maker_android_egortsevmaxim
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -36,8 +37,7 @@ class MainActivity : ComponentActivity() {
             PlaylistmakerandroidEgortsevMaximTheme {
                 MainScreen(
                     onSearchClick = {
-                        Log.d("PlaylistMaker", "Нажата кнопка \"Поиск\"")
-                        Toast.makeText(this, "Нажата кнопка \"Поиск\"", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, SearchActivity::class.java))
                     },
                     onPlaylistClick = {
                         Log.d("PlaylistMaker", "Нажата кнопка \"Плейлисты\"")
@@ -48,8 +48,7 @@ class MainActivity : ComponentActivity() {
                         Toast.makeText(this, "Нажата кнопка \"Избранное\"", Toast.LENGTH_SHORT).show()
                     },
                     onSettingsClick = {
-                        Log.d("PlaylistMaker", "Нажата кнопка \"Настройки\"")
-                        Toast.makeText(this, "Нажата кнопка \"Настройки\"", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, SettingsActivity::class.java))
                     }
                 )
             }
